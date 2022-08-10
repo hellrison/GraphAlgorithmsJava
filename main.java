@@ -6,7 +6,7 @@ public class main {
         g1.addEdge(1, 0, 3);
         g1.addEdge(0, 3, 4);
         g1.addEdge(3, 0, 4);
-        g1.addEdge(3, 2, 4);
+        g1.addEdge(3, 0, 4);
         g1.addEdge(3, 4, 2); // AVISO
 
         System.out.println(g1);
@@ -14,5 +14,9 @@ public class main {
         g1.degree(1);
         g1.degree(2);
         g1.degree(3);
+        System.out.println("Maior grau:\n \n " + g1.highestDegree());
+        System.out.println("Menor grau:" + g1.lowDegree() + "\n");
+        System.out.println(g1);// matriz inicial
+        System.out.println("" + g1.complement());// matriz complementar
     }
 }

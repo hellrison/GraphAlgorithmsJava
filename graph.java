@@ -57,4 +57,51 @@ public class graph {
 
         return degree;
     }
+
+    public int highestDegree() {
+        int aux = 0;// para melhorar o desempenho do codi, nao ficar repetindo o degree
+        int highest = 0;
+        for (int i = 0; i < this.adjMatrix.length; i++) {
+            aux = degree(i);
+            if (aux > highest) {
+                highest = aux;
+            }
+
+        }
+        return highest;
+    }
+
+    public int lowDegree() {
+        int aux = 0;// para melhorar o desempenho do codi, nao ficar repetindo o degree
+        int low = this.adjMatrix.length;// tem que ser comparado com o maior tamanho, para ser comparado com o menor.
+        for (int i = 0; i < this.adjMatrix.length; i++) {
+            aux = degree(i);
+            if (aux < low) {
+                low = aux;
+            }
+
+        }
+        return low;
+    }
+
+    public graph complement() {
+        // returnes the complement of the corruent grafo
+        graph complement = new graph(this.adjMatrix.length);
+        for (int i = 0; i < adjMatrix.length; i++) {
+            for (int j = 0; j < adjMatrix.length; j++) {
+                if (adjMatrix[i][j] == 0) {
+                    complement.adjMatrix[i][j] = 1;
+                }
+                if (adjMatrix[i][j] != 0) {
+                    complement.adjMatrix[i][j] = 0;
+                }
+                if (i == j) {
+                    complement.adjMatrix[i][j] = 0;
+                }
+            }
+        }
+        return complement;
+
+    }
+
 }
