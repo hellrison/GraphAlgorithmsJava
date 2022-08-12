@@ -5,3 +5,5 @@ foi proposto a criação de um gravo aonde se colocaria valores em determinado n
 Aula 10/08/22
 Achar o maior grau do grafo utilizando a funcao highestDegree.
 Achar o menor grau do grafo utilizando a funcao lowDegree.
+Imprimir uma matriz complemento.
+ok
