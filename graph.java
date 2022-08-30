@@ -179,4 +179,25 @@ public class graph {
     }
     return true;
   }
+  public ArrayList<Integer> dfs_Rec(int s){
+    int[] desc = new int[this.countNodes];
+    ArrayList<Integer> R = new ArrayList<>();
+    dfs_Rec_Aux(s, desc, R);
+    return R;
+
+}
+
+public void dfs_Rec_Aux(int u, int desc[],ArrayList<Integer> R){
+
+    desc[u] = 1;
+    R.add(u);
+    for (int v = 0; v < this.adjMatrix[u].length; ++v) {
+        if (this.adjMatrix[u][v] != 0 && desc[v] == 0) {
+            dfs_Rec_Aux(v, desc, R);
+        }
+    }
+
+
+}
+
 }
